@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;          /* White background */
+    --foreground: 222 47% 11%;        /* Dark text */
+    
+    --card: 0 0% 98%;                 /* Very light gray for cards */
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 98%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 221 83% 53%;           /* Clear blue */
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96%;         /* Light blue-gray */
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84% 60%;         /* Clear red */
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+}
+
+@layer utilities {
+  .colorful-gradient {
+    background: linear-gradient(90deg, #1a1b26 0%, #1f2335 48%, #24283b 100%);
+  }
+  .soft-green-bg,
+  .soft-yellow-bg,
+  .soft-orange-bg,
+  .soft-pink-bg,
+  .soft-blue-bg {
+    background: hsl(var(--background));
+  }
+  .rounded-card {
+    @apply rounded-2xl shadow-md bg-card;
+  }
+}
+
+/* Quick accent text - visible against dark bg */
+.accent-text {
+  color: rgb(147, 112, 219);
+}
+
+/* Subtle card bg */
+.card-gradient {
+  background: linear-gradient(135deg, #1a1c2c 0%, #24273a 100%);
+}
+
+/* Ensure header/navbar, dropdown, popover, etc. have solid dark backgrounds */
+header,
+nav,
+footer,
+.sheet-content,
+.bg-muted,
+.bg-popover,
+.bg-card,
+.soft-green-bg,
+.soft-yellow-bg,
+.soft-orange-bg,
+.soft-pink-bg,
+.soft-blue-bg {
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
